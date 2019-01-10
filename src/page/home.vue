@@ -56,28 +56,28 @@
     <p>{{ rxname }}</p>
     <el-button @click="open">open</el-button>
     <self-dialog ref="dialog"></self-dialog>
-    <!--<el-input v-model="testObject.testInput"></el-input>-->
-    <!--<el-button @click="visibleDialog = true"></el-button>-->
-    <!--<slottest title="hello" :visible="visibleDialog">-->
-      <!--<p>this is a dialog</p>-->
-      <!--<div slot="footer">-->
-        <!--<button>sure</button>-->
-        <!--<button @click="visibleDialog = false">close</button>-->
-      <!--</div>-->
-    <!--</slottest>-->
-    <!--<div class="home-bar" @mouseenter="isHover = true" @mouseleave="isHover = false">-->
-      <!--<nav>none</nav>-->
-      <!--<ul class="home-bar-list" v-show="isHover">-->
-        <!--<li class="home-list-item"-->
-            <!--v-for="(item, index) in bar_list"-->
-            <!--:key="index"-->
-            <!--@click="next_nav(item.path)">{{ item.name }}</li>-->
-      <!--</ul>-->
-    <!--</div>-->
-    <!--<section class="home-title">-->
-      <!--<p class="title">NONE</p>-->
-      <!--<p>play none</p>-->
-    <!--</section>-->
+    <el-input v-model="testObject.testInput"></el-input>
+    <el-button @click="visibleDialog = true"></el-button>
+    <slottest title="hello" :visible="visibleDialog">
+      <p>this is a dialog</p>
+      <div slot="footer">
+        <button>sure</button>
+        <button @click="visibleDialog = false">close</button>
+      </div>
+    </slottest>
+    <div class="home-bar" @mouseenter="isHover = true" @mouseleave="isHover = false">
+      <nav>none</nav>
+      <ul class="home-bar-list" v-show="isHover">
+        <li class="home-list-item"
+            v-for="(item, index) in bar_list"
+            :key="index"
+            @click="next_nav(item.path)">{{ item.name }}</li>
+      </ul>
+    </div>
+    <section class="home-title">
+      <p class="title">NONE</p>
+      <p>play none</p>
+    </section>
   </div>
 </template>
 
