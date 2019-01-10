@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  .slider-container {
+    width: 400px;
+    height: 30px;
+    border: 1px solid #ccc;
+  }
+</style>
+<body>
+<div id="testdefine" onclick="change()">test</div>
+<input id="inputvalue" >
+<div class="slider-container">
+  <button class="slider"></button>
+</div>
+<script>
+  const a = { name: 'as', age: 11, use: 'computer' }
+ // console.log(Object.entries(a))
+  //console.log(Object.values(a))
+  const test = document.getElementById('testdefine')
+  const value = document.getElementById('inputvalue')
+  const data = {}
+  const Obj = function () {
+    const asd = {
+      getName: (name) => {
+        console.log(name)
+      }
+    }
+    return asd
+  }
+  const cc = {
+    suv: 'ssss'
+  }
+//  console.log(Object)
+//  console.log(cc.__proto__)
+
+//  Obj.prototype.getName = (name) => {
+//    console.log(name)
+//  }
+//  Obj.prototype.getAge = (age) => {
+//    console.log(age)
+//  }
+  const fun1 = new Obj()
+  const formdata = new FormData()
+  fun1.getName(11)
+//  console.log(fun1)
+//  console.log(formdata)
+  let bValue
+  Object.defineProperty(data, 'text', {
+    set: value => {
+      test.textContent = value
+      bValue = value
+    },
+    get: () => {
+      console.log(bValue)
+      return bValue
+    }
+  })
+  value.oninput = function() {
+    //data.text = value.value
+    data.text = value.value
+  }
+  data.text = 2
+  console.log(data)
+  const input = document.getElementById('inputvalue')
+  //console.log(Object.getOwnPropertyDescriptors(data))
+</script>
+</body>
+</html>
