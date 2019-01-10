@@ -2,10 +2,12 @@
   import { registerForm } from '../../src/init/data/index'
   import CndButton from '../components/commen/button.vue'
   import CndDialog from '../components/commen/dialog.vue'
+  import CndSlider from '../components/commen/slider.vue'
   export default {
     components: {
       CndButton,
-      CndDialog
+      CndDialog,
+      CndSlider
     },
     data: () => {
       const validatePass = (rule, value, callback) => {
@@ -52,13 +54,18 @@
     methods: {
       register() {
         this.dialogVisible = true
+      },
+      changeVisible(val) {
+        this.dialogVisible = val
       }
     },
+
   }
 </script>
 
 <template>
   <div class="register-content">
+    <cnd-slider></cnd-slider>
     <h1>注册</h1>
     <el-form :model="registerForm" label-width="100px" :rules="rules" ref="registerForm">
       <el-form-item label="邮箱" prop="email">
@@ -75,7 +82,7 @@
       </el-form-item>
     </el-form>
     <cnd-button type="primary" @click="register">注册</cnd-button>
-    <cnd-dialog title="dialog" :visible.sync="dialogVisible">
+    <cnd-dialog title="dialog" :visible.sync="dialogVisible" @open="changeVisible">
       <p>ARE YOU OK?</p>
       <div slot="footer" class="dialog-footer">
         <cnd-button type="small">确定</cnd-button>

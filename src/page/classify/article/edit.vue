@@ -10,7 +10,7 @@
         title: 'xx',
         introduce: 'xx',
         author: 'xxx',
-        content: '<p>xixi</p>',
+        content: '<p>xixi</p><p>haha</p>',
         anonymous: false,
         type: '绿帽',
       },

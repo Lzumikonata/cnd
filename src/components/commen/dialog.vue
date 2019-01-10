@@ -8,15 +8,16 @@
     },
     watch: {
       visible: function(val) {
-        this.close = val
+        this.open = val
       }
     },
     data: () => ({
-      close: false
+      open: false
     }),
     methods: {
       closeDialog() {
-        this.$emit('')
+        this.open = false
+        this.$emit('open', this.open)
       }
     },
   }
@@ -29,7 +30,7 @@
     <div class="cnd-body"><slot></slot></div>
     <div class="cnd-footer"><slot name="footer"></slot></div>
     </div>
-    <div class="cnd-modal" @click=""></div>
+    <div class="cnd-modal" @click="closeDialog"></div>
   </div>
 </template>
 

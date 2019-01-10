@@ -3,19 +3,31 @@ import {
   Checkbox,
   Message,
   Select,
-  Button, Option,
+  Button,
+  Option,
   Input,
   Form,
   FormItem,
+  Dialog,
+  Row,
+  Col,
 } from 'element-ui'
 
-Vue.use(Checkbox)
-Vue.use(Select)
-Vue.use(Button)
-Vue.use(Option)
-Vue.use(Input)
-Vue.use(Form)
-Vue.use(FormItem)
+const eleArray = [
+  Checkbox,
+  Select,
+  Button,
+  Option,
+  Input,
+  Form,
+  FormItem,
+  Dialog,
+  Row,
+  Col
+]
+for(let i of eleArray) {
+  Vue.use(i)
+}
 Vue.prototype.$message = Message;
 
 export default Vue

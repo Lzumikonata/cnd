@@ -1,9 +1,10 @@
 <script>
   import Side from '../../../components/side.vue'
   import List from '../../../components/list.vue'
-  import { getList } from '../../../service/getData'
+  // import { getList } from '../../../service/getData'
+  import SideBar from '../../../components/sidebar.vue'
   export default {
-    components: { Side, List },
+    components: { Side, List, SideBar },
     data: () => ({
       articles: [{
         title: 'aa'
@@ -25,17 +26,17 @@
       }
     },
     mounted() {
-       getList("type=1").then(res => {
-         this.articles = res.message
-          console.log(res)
-       })
+//       getList("type=1").then(res => {
+//         this.articles = res.message
+//          console.log(res)
+//       })
     }
   }
 </script>
 
 <template>
   <div class="topic">
-    <Side>
+    <side-bar></side-bar>
       <div class="articles">
         <div class="choice">ssss</div>
         <h2>精选</h2>
@@ -62,7 +63,6 @@
         </div>
         <List></List>
       </div>
-    </Side>
   </div>
 </template>
 
